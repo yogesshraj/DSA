@@ -712,64 +712,93 @@
 #     fptr.close()
 
 
-def minion_game(string):
-    vowels = ["A", "E", "I", "O", "U"]
-    # vowel_user_calc:
-    vowel_check = check_vowels(string, vowels)
-    total_vowel_words = []
-    for j in vowel_check:
-        remaining_str = list(string[j:])
-        for i in range(len(remaining_str)):
-            total_vowel_words.append("".join(remaining_str))
-            remaining_str.pop()
+# def minion_game(string):
+#     vowels = ["A", "E", "I", "O", "U"]
+#     # vowel_user_calc:
+#     vowel_check = check_vowels(string, vowels)
+#     score = 0
+#     total_vowel_words = list()
+#     for j in vowel_check["vowels_arr"]:
+#         remaining_str = list(string[j:])
+#         for i in range(len(remaining_str)):
+#             if "".join(remaining_str) not in total_vowel_words:
+#                 total_vowel_words.append("".join(remaining_str))
+#                 for k in range(len(s)):
+#                     if s.startswith("".join(remaining_str),k):
+#                         score+=1
+#             remaining_str.pop()
     
-    total_vowel_words_2 = list(set(total_vowel_words))
-    score = 0
-    for i in total_vowel_words_2:
-        for j in range(len(s)):
-            if s.startswith(i,j):
-                score+=1
-    print(score)
+#     print(score)
 
-    # non_vowel_user_calc:
-    non_vowel_check = check_non_vowels(string, vowels)
-    total_non_vowel_words = []
-    for j in non_vowel_check:
-        remaining_str = list(string[j:])
-        for i in range(len(remaining_str)):
-            total_non_vowel_words.append("".join(remaining_str))
-            remaining_str.pop()
+#     # non_vowel_user_calc:
+#     total_non_vowel_words = list()
+#     non_vowel_score = 0
+#     for j in vowel_check["non_vowels_arr"]:
+#         remaining_str = list(string[j:])
+#         for i in range(len(remaining_str)):
+#             if "".join(remaining_str) not in total_non_vowel_words:
+#                 total_non_vowel_words.append("".join(remaining_str))
+#                 for k in range(len(s)):
+#                     if s.startswith("".join(remaining_str),k):
+#                         non_vowel_score+=1
+#             remaining_str.pop()
     
-    total_non_vowel_words_2 = list(set(total_non_vowel_words))
-    non_vowel_score = 0
-    for i in total_non_vowel_words_2:
-        for j in range(len(s)):
-            if s.startswith(i,j):
-                non_vowel_score+=1
-    print(non_vowel_score)
-    if(score > non_vowel_score):
-        print(f"Kevin {score}")
+#     # for i in total_non_vowel_words:
+#     #     for j in range(len(s)):
+#     #         if s.startswith(i,j):
+#     #             non_vowel_score+=1
+#     print(non_vowel_score)
+#     if(score > non_vowel_score):
+#         print(f"Kevin {score}")
+#     elif score < non_vowel_score:
+#         print(f"Stuart {non_vowel_score}")
+#     else:
+#         print("Draw")
+
+# def check_vowels(string, vowels):
+#     return_arr = []
+#     return_arr_non_vowels = []
+#     for i in range(len(string)):
+#         for j in vowels:
+#             if string[i] == j:
+#                 return_arr.append(i)
+#             if string[i] != j:
+#                 return_arr_non_vowels.append(i)
+#             else:
+#                 break
+#     return {"vowels_arr" : list(set(return_arr)), "non_vowels_arr": list(set(return_arr_non_vowels))}
+#     # return list(set(return_arr))  
+
+    
+# if __name__ == '__main__':
+#     s = input()
+#     minion_game(s)
+
+
+def minion_game(s: str) -> None:
+    s = s.upper()
+    vowels = set("AEIOU")
+    n = len(s)
+    kevin = 0  # vowel player
+    stuart = 0  # consonant player
+
+    for i, ch in enumerate(s):
+        # number of substrings that start at i is n - i
+        print(i,ch)
+        print(n - i)
+        if ch in vowels:
+            kevin += n - i
+        else:
+            stuart += n - i
+
+    if kevin > stuart:
+        print("Kevin", kevin)
+    elif stuart > kevin:
+        print("Stuart", stuart)
     else:
-        print(f"Stuart {non_vowel_score}")
+        print("Draw")
 
-def check_vowels(string, vowels):
-    return_arr = []
-    for i in range(len(string)):
-        for j in vowels:
-            if string[i] == j:
-                return_arr.append(i)
-    return list(set(return_arr))  
 
-def check_non_vowels(string, vowels):
-    return_arr = []
-    for i in range(len(string)):
-        for j in vowels:
-            if string[i] != j:
-                return_arr.append(i)
-            else:
-                break
-    return list(set(return_arr))  
-    
-if __name__ == '__main__':
-    s = input()
+if __name__ == "__main__":
+    s = input().strip()
     minion_game(s)
