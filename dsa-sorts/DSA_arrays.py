@@ -35,3 +35,7 @@ for i in range(n):
     a[i], a[min_index] = a[min_index], a[i]
 
 print(a)
+
+
+for i in range(0,-1,-1):
+    print(i)
