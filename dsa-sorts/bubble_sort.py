@@ -28,3 +28,17 @@ for i in range(o-1):
             b[j], b[j+1] = b[j+1], b[j]
 
 print(b,"b") 
+
+c = [4,5,3,7,3,8,5,7,8]
+p = len(c)
+for i in range(p-1):
+    swapped = False
+    for j in range(p-i-1):
+        if c[j] > c[j+1]:
+            c[j], c[j+1] = c[j+1], c[j]
+            swapped = True
+    if not swapped:
+        break
+print(c)
+
+# much more faster by skipping the sorted fields
