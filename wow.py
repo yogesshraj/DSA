@@ -775,30 +775,30 @@
 #     minion_game(s)
 
 
-def minion_game(s: str) -> None:
-    s = s.upper()
-    vowels = set("AEIOU")
-    n = len(s)
-    kevin = 0  # vowel player
-    stuart = 0  # consonant player
+# def minion_game(s: str) -> None:
+#     s = s.upper()
+#     vowels = set("AEIOU")
+#     n = len(s)
+#     kevin = 0  # vowel player
+#     stuart = 0  # consonant player
 
-    for i, ch in enumerate(s):
-        # number of substrings that start at i is n - i
-        print(i,ch)
-        print(n - i)
-        if ch in vowels:
-            kevin += n - i
-        else:
-            stuart += n - i
+#     for i, ch in enumerate(s):
+#         # number of substrings that start at i is n - i
+#         print(i,ch)
+#         print(n - i)
+#         if ch in vowels:
+#             kevin += n - i
+#         else:
+#             stuart += n - i
 
-    if kevin > stuart:
-        print("Kevin", kevin)
-    elif stuart > kevin:
-        print("Stuart", stuart)
-    else:
-        print("Draw")
+#     if kevin > stuart:
+#         print("Kevin", kevin)
+#     elif stuart > kevin:
+#         print("Stuart", stuart)
+#     else:
+#         print("Draw")
 
 
-if __name__ == "__main__":
-    s = input().strip()
-    minion_game(s)
+# if __name__ == "__main__":
+#     s = input().strip()
+#     minion_game(s)
