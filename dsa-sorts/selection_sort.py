@@ -68,3 +68,23 @@ for i in range(s-1):
     g[i], g[min_index] = g[min_index], g[i]
 
 print(g)
+
+h = [45,7,5,67,7,4,4,5,43,56,57,43,65,65]
+z = len(h)
+for i in range(z-1):
+    min_index = i
+    for j in range(i+1, z):
+        if h[j] < h[min_index]:
+            min_index = j
+    h[i], h[min_index] = h[min_index], h[i]
+
+print(h)
+
+qa = [44,6,3,24,55,77,553,22,567,3324,22,357,2]
+for i in range(len(qa)):
+    min_index = i
+    for j in range(i+1,len(qa)):
+        if qa[j] > qa[min_index]:
+            min_index = j
+    qa[i],qa[min_index] = qa[min_index], qa[i]
+print(qa) 
