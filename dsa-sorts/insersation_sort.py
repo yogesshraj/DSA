@@ -23,3 +23,16 @@ for i in range(1, d):
             break
     c[insertion_index] = index_value
 print(c) 
+
+e= [345346,43,34643435,3464363,34633,43543543,3463443,4363463,43643]
+f= len(e)
+for i in range(1, f):
+    insertion_index = i 
+    value = e[i]
+    for i in range(i-1, -1,-1):
+        if c[j] < value:
+            insertion_index = j
+        else: 
+            break
+    e[insertion_index ] = value
+print(c)
