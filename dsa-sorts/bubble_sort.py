@@ -42,3 +42,28 @@ for i in range(p-1):
 print(c)
 
 # much more faster by skipping the sorted fields
+
+d = [54,2,56,7,7,33,6,7,4,6,74,34,6,65]
+z = len(d)
+for i in range(z-1):
+    swapped = False
+    for j in range(z-i-1):
+        if d[j] > d[j+1]:
+            d[j], d[j+1] = d[j+1], d[j]
+            swapped = True
+    if not swapped:
+        break
+
+print(d)
+
+
+e = [5,3,3,6,7,2,7,3,4,7,3,42,4]
+for i in range(len(e)):
+    swapped = False
+    for j in range(len(e)- i - 1):
+        if e[j] > e[j+1]:
+            e[j], e[j+1] = e[j+1], e[j]
+            swapped= True
+    if not swapped:
+        break
+print(e) 
