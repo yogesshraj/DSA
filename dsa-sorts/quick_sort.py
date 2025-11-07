@@ -22,21 +22,26 @@
 
 
 
-a = [5,87,3,64,7,3,75,86,3443,7,3,2,7,3133,7,4]
-def partition(arr, low, high):
-    pivot = arr[high]
-    i = low - 1
-    for j in range(low, high):
-        if arr[j] < pivot:
-            i+=1
-            arr[i], arr[j] = arr[j], arr[i]
-    arr[i+1], arr[high] = arr[high], arr[i+1]
-    return i+1
+# a = [5,87,3,64,7,3,75,86,3443,7,3,2,7,3133,7,4]
+# def partition(arr, low, high):
+#     pivot = arr[high]
+#     i = low - 1
+#     for j in range(low, high):
+#         if arr[j] < pivot:
+#             i+=1
+#             arr[i], arr[j] = arr[j], arr[i]
+#     arr[i+1], arr[high] = arr[high], arr[i+1]
+#     return i+1
 
-def quicksort(arr, low, high):
-    if low < high:
-        pivot_index = partition(arr, low, high)
-        quicksort(arr, low, pivot_index-1)
-        quicksort(arr, pivot_index+1, high)
-quicksort(a, 0, len(a)-1)
+# def quicksort(arr, low, high):
+#     if low < high:
+#         pivot_index = partition(arr, low, high)
+#         quicksort(arr, low, pivot_index-1)
+#         quicksort(arr, pivot_index+1, high)
+# quicksort(a, 0, len(a)-1)
+# print(a)
+
+
+
+a = [4,7,56,8,4,3,56,8,34635,765,6324,532,5678,453,2437654,7625,547,53623435,54,14543,634,23,63623,6342]
 print(a)

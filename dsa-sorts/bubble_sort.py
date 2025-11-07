@@ -67,3 +67,16 @@ for i in range(len(e)):
     if not swapped:
         break
 print(e) 
+
+new_arr = [5,6,7,32,5,6,7,3,6,7,3,657]
+legnth = len(new_arr)
+for i in range(legnth-1):
+    swapped = False
+    for j in range(legnth-i-1):
+        if new_arr[j] < new_arr[j+1]:
+            new_arr[j], new_arr[j+1] = new_arr[j+1], new_arr[j]
+            swapped = True
+    if not swapped:
+        break
+    
+print(new_arr)

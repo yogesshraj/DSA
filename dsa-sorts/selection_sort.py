@@ -88,3 +88,17 @@ for i in range(len(qa)):
             min_index = j
     qa[i],qa[min_index] = qa[min_index], qa[i]
 print(qa) 
+
+
+wow = [5.67,42,4,6,53,65,332,5,6,2,45,4,6,3,6,5434,65,4]
+length = len(wow)
+for i in range(length-1):
+    min_index = i
+    for j in range(i+1, length):
+        if wow[j] > min_index:
+            min_index = j
+
+    min_value = wow.pop(min_index)
+    wow.insert(i, min_value)
+    # wow[i], wow[min_index] = wow[min_index], wow[i]
+print(wow)
