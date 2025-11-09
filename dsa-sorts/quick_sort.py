@@ -41,7 +41,40 @@
 # quicksort(a, 0, len(a)-1)
 # print(a)
 
+# def partition(a, high, low):
+#     pivot = a[high]
+#     i = low - 1
+#     for j in range(low, high):
+#         if a[j] > pivot:
+#             i+=1
+#             a[i], a[j] = a[j], a[i]
+#     a[i+1], a[high] = a[high], a[i+1]
+#     return i +1
+# def quicksort (a, high, low):
+#     if low < high:
+#         pivot = partition(a, high, low)
+#         quicksort(a, pivot-1,low)
+#         quicksort(a, high,pivot+1)
+# a = [4,7,56,8,4,3,56,8,34635,765,6324,532,5678,453,2437654,7625,547,53623435,54,14543,634,23,63623,6342]
+# quicksort(a,  len(a)-1, 0)
+# print(a)
 
 
-a = [4,7,56,8,4,3,56,8,34635,765,6324,532,5678,453,2437654,7625,547,53623435,54,14543,634,23,63623,6342]
+def partition(a, low, high):
+    pivot = a[high]
+    i = low -1
+    for j in range(low, high):
+        if a[j] < pivot:
+            i+=1
+            a[i],a[j] = a[j], a[i]
+    a[i+1], a[high] = a[high], a[i+1]
+    print(a)
+    return i+1
+def quicksort (a, low, high):
+    if low < high:
+        pivot = partition(a, low, high)
+        quicksort(a, low, pivot-1)
+        quicksort(a, pivot+1, high)
+a = [34,765,34,7,78]
+quicksort(a, 0, len(a)-1)
 print(a)
