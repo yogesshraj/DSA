@@ -64,3 +64,4 @@ def k_distinct(s, k):
         best = max(best, i - left + 1)
     print(best)
 k_distinct(string, 2)
+

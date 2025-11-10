@@ -35,3 +35,17 @@ def pair_sum_2(b, target):
 print(pair_sum_2(b, 17))
 print(pair_sum_2([2, 3, 5, 8, 9, 14], 17))
 print(pair_sum_2([1, 2, 3, 4], 100))
+
+
+c = [1, 4, 7, 9, 11, 15]
+l = 0
+r = len(c)-1
+while l < r:
+    s = c[l]+ c[r]
+    if s > 18:
+        r-=1
+    elif s< 18:
+        l+=1
+    else :
+        print(l,r)
+        break

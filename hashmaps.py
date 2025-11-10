@@ -11,3 +11,14 @@ def hashmap(a, target):
     return pairs
 
 hashmap(a, 7)
+
+wow = [2, 2, 3, 3, 4, 4]
+def find_freq(a, target):
+    freq= {}
+    total_pairs = 0 
+    for i in range(len(a)):
+        relevant_pair = target - a[i]
+        total_pairs += freq.get(relevant_pair, 0)
+        freq[a[i]] = freq.get(a[i], 0) +1
+    return total_pairs
+print(find_freq(wow, 6))
