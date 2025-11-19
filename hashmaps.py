@@ -23,14 +23,26 @@ def find_freq(a, target):
     return total_pairs
 print(find_freq(wow, 6))
 
+
+# def total_pairs (a, t):
+#     count = {}
+#     pairs = 0
+#     for l in range(len(a)):
+#         friend = t - a[l]
+#         pairs += count.get(friend, 0)
+#         count[a[l]] = count.get(a[l], 0) +1
+#     print(pairs)
+# total_pairs(arrss, target)
+
 arrss = [1, 5, 3, 3, 3, 2, 4]
 target = 6
-def total_pairs (a, t):
-    count = {}
+def total_pairs (a,t ):
+    hashmap = {}
     pairs = 0
-    for l in range(len(a)):
-        friend = t - a[l]
-        pairs += count.get(friend, 0)
-        count[a[l]] = count.get(a[l], 0) +1
-    print(pairs)
-total_pairs(arrss, target)
+    n = len(a)
+    for i in range(n):
+        friend = t - a[i]
+        pairs += hashmap.get(a[friend], 0)
+        hashmap[a[i]] = hashmap.get(a[i], 0)+1
+    print(hashmap)
+
