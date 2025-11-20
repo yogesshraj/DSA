@@ -14,3 +14,14 @@ def longest_inc_subarray(arr):
 
 longest_inc_subarray(a)
 
+#proper prefix sum
+a = [2,1,3,2]
+def prefix_sum_arr(a):
+    prefix_sum = [0]
+    for i in range(len(a)):
+        prefix_sum.append(prefix_sum[-1]+a[i])
+    return prefix_sum
+prefix_sum = prefix_sum_arr(a)
+print(prefix_sum)
+#find sum first three elements.
+print(prefix_sum[3]- prefix_sum[0])
