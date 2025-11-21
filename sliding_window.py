@@ -179,3 +179,19 @@ def distinc_values (s, k):
     print(max_pairs)
     
 distinc_values(string,k)
+
+a = [2,1,3,2,4,1,1]
+# a = [7]
+k = 7
+def longest_k_substring(a, k):
+    left = 0
+    max_pair = 0
+    total_sum = 0
+    for right in range(len(a)):
+        total_sum += a[right]
+        while total_sum > k:
+            total_sum -= a[left]
+            left +=1
+        max_pair = max(max_pair, right-left+1)
+    return max_pair
+print(longest_k_substring(a, k))
