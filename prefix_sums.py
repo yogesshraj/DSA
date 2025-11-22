@@ -36,7 +36,7 @@ prefix_sum_man = prefix_sums(c)
 print(prefix_sum_man[5]- prefix_sum_man[2])
 
 
-a = [1, 2, 3, -1, 2]
+a = [1, 2, 3, -1, 2, 1]
 k = 3
 def prefix_sum_for_exact_k_values(a, k):
     prefix_sum_array = [0]
@@ -45,3 +45,17 @@ def prefix_sum_for_exact_k_values(a, k):
     
     print(prefix_sum_array)
 prefix_sum_for_exact_k_values(a,k)
+
+def prefix_sum_for_exact_k_values_2(a,k):
+    prefix_sum = 0
+    prefix_hash = {0:1}
+    answer = 0
+    for i in a:
+        prefix_sum += i
+
+        earlier_value = prefix_sum - k
+        if earlier_value in prefix_hash:
+            answer += prefix_hash[earlier_value]
+        prefix_hash[prefix_sum] = prefix_hash.get(prefix_sum, 0)+ 1
+    return answer
+print(prefix_sum_for_exact_k_values_2(a, k))
