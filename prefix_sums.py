@@ -59,3 +59,20 @@ def prefix_sum_for_exact_k_values_2(a,k):
         prefix_hash[prefix_sum] = prefix_hash.get(prefix_sum, 0)+ 1
     return answer
 print(prefix_sum_for_exact_k_values_2(a, k))
+
+
+a = [2, 1, 3, -2, 4, 1]
+k = 5
+def how_many_sub_arr(a, k):
+    prefix = 0
+    existence = {0:1}
+    total_sub_arr = 0
+    for i in a:
+        prefix += i
+        needed_value = prefix - k
+
+        if needed_value in existence:
+            total_sub_arr += existence[needed_value]
+        existence[prefix] = existence.get(prefix, 0) + 1
+    return total_sub_arr
+print(how_many_sub_arr(a, k))
