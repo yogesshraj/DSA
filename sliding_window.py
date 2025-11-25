@@ -176,7 +176,7 @@ def distinc_values (s, k):
                 del freq[s[left]]
             left +=1
         max_pairs = max(max_pairs, right-left+1)
-    print(max_pairs)
+    print(max_pairs,"wo")
     
 distinc_values(string,k)
 
@@ -195,3 +195,21 @@ def longest_k_substring(a, k):
         max_pair = max(max_pair, right-left+1)
     return max_pair
 print(longest_k_substring(a, k))
+
+string = "eceba"
+k =2 
+
+def find_k_distinct(s, k):
+    obj = {}
+    left = 0
+    max_pairs = 0
+    for i in range(len(s)):
+        obj[s[i]] = obj.get(s[i], 0) + 1
+        while len(obj) > k:
+            obj[s[left]] = obj[s[left]] - 1
+            if obj[s[left]]== 0:
+                del obj[s[left]]
+            left += 1
+        max_pairs = max(max_pairs, i - left + 1)
+    return max_pairs
+print(find_k_distinct(string, k),"yog")

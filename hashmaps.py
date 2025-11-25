@@ -10,7 +10,7 @@ def hashmap(a, target):
     # print(pairs)
     return pairs
 
-hashmap(a, 7)
+print(hashmap(a, 7))
 
 wow = [2, 2, 3, 3, 4, 4]
 def find_freq(a, target):
@@ -44,5 +44,17 @@ def total_pairs (a,t ):
         friend = t - a[i]
         pairs += hashmap.get(a[friend], 0)
         hashmap[a[i]] = hashmap.get(a[i], 0)+1
-    print(hashmap)
+    print(pairs)
+total_pairs(arrss, target)
 
+arrss = [1, 5, 3, 3, 3, 2, 4]
+target = 6
+def hasmap_yo(a, t):
+    hashmap_obj = {}
+    pairs = 0
+    for i in range(len(a)):
+        friend_existence =  t- a[i] 
+        pairs += hashmap_obj.get(friend_existence, 0)
+        hashmap_obj[a[i]] = hashmap_obj.get(a[i], 0) +1
+    return pairs
+print(hasmap_yo(arrss, target))
