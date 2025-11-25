@@ -49,3 +49,17 @@ while l < r:
     else :
         print(l,r)
         break
+
+c = [1, 4, 7, 9, 11, 15]
+l = 0
+r = len(c)-1
+goal = 18
+while l < r:
+    total_sum = c[l] + c[r]
+    if total_sum == goal:
+        print(l, r)
+        break
+    if total_sum < goal:
+        l += 1
+    else: 
+        r -=1 
