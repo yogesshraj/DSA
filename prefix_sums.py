@@ -81,13 +81,13 @@ a = [2, 1, 3, -2, 4, 1]
 k = 5
 def prefix_sum_algo(a,k):
     prefix_sum = 0
-    total_value = {0:1}
-    total_pairs = 0
+    prefix_obj= {0:1}
+    continuous_sum = 0
     for i in a:
         prefix_sum += i
-        check_value = prefix_sum - k
-        if check_value in total_value:
-            total_pairs += 1
-        total_value[prefix_sum] = total_value.get(prefix_sum, 0)+1
-    return total_pairs
+        needed = prefix_sum - k
+        if needed in prefix_obj:
+            continuous_sum += 1
+        prefix_obj[prefix_sum] = prefix_obj.get(prefix_sum, 0) +1
+    return continuous_sum
 print(prefix_sum_algo(a, k))
