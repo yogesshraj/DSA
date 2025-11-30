@@ -1,14 +1,19 @@
-import math as math
+import math
+
+def minEatingSpeed(piles, H):
+    low = 1
+    high = max(piles)
+    while low < high:
+        mid = math.ceil((low + high)// 2)
+        hours = 0
+        for p in piles:
+            hours += math.ceil(p/mid)
+        if hours > H:
+            low = mid + 1
+        else:
+            high = mid
+    return low
+
 piles = [3, 6, 7, 11]
-H = 8 
-k_min = 1
-k_max = max(piles)
-k_mid = math.ceil((k_min + k_max) // 2)
-total_h = 0
-print(k_mid)
-for i in piles:
-    the_math = math.ceil(i/k_mid)
-    total_h += the_math
-    print(the_math)
-    
-print(total_h)
+H = 8
+print(minEatingSpeed(piles, H))   # Output: 4
