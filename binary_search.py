@@ -41,3 +41,27 @@ def how_many_sub_arr(a, k):
 
     return max_value
 print(how_many_sub_arr(a, k))
+
+def longest_subarray_sum_k(a, k):
+    prefix_sum = 0
+    seen = {0: -1}   # prefix sum first appears at index -1
+    max_len = 0
+
+    for i, num in enumerate(a):
+        prefix_sum += num
+
+        needed = prefix_sum - k
+
+        if needed in seen:
+            max_len = max(max_len, i - seen[needed])
+        print(seen,"yogi")
+        if prefix_sum not in seen:   # store first occurrence ONLY
+            seen[prefix_sum] = i
+
+    return max_len
+
+
+# test
+a = [1, -1, 5, -2, 3]
+k = 3
+print(longest_subarray_sum_k(a, k))  # 4
